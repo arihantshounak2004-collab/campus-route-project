@@ -1,0 +1,13 @@
+# Phase Log
+- [x] Phase 1: Project structure
+- [x] Phase 2: Database (schema + sample data) - tested on MariaDB 10.11 in a sandbox; MySQL 8 + Workbench run still to be done by the student
+- [x] Phase 3: JDBC connectivity - tested in sandbox with MariaDB driver + MariaDB server; official MySQL Connector/J on Windows still to be confirmed by the student
+- [x] Phase 4: Graph - 32 tests passed in sandbox (MariaDB); not yet run on student MySQL 8 + Connector/J
+- [x] Phase 5: Dijkstra + A* - 41 tests passed in sandbox (incl. mutation checks); not yet run on student MySQL 8 + Connector/J
+- [x] Phase 6: Context-aware routing - 86 tests passed in sandbox (incl. 7 mutation checks); not yet run on student MySQL 8 + Connector/J
+- [x] Phase 7: HTTP server / API - 128 new tests passed in sandbox (46 JSON + 82 HTTP, incl. 6 mutation checks); not yet run on student PC
+- [x] Phase 8: Frontend (dashboard, SVG map, route planner, 3-route comparison) - checked in a headless browser against a MOCK of the API (25 checks passed); NOT yet run against the real Java server + MySQL
+- [x] Phase 9: Recommendations (rule-based, GET /api/recommendations) - 25 rule tests passed in sandbox (no DB needed, 7 mutation checks all caught); endpoint + page NOT yet run against real MySQL
+- [ ] Phase 10: Admin
+- [ ] Phase 11: Integration and testing
+- [ ] Phase 12: Documentation

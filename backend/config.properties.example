@@ -1,0 +1,15 @@
+# Copy this file to "config.properties" and put YOUR MySQL details here.
+# config.properties is ignored by git so your password is never shared.
+db.url=jdbc:mysql://localhost:3306/campus_route_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
+db.user=root
+db.password=CHANGE_ME
+
+# ---- Web server (all optional) ----
+# The web address will be http://localhost:<server.port>
+server.port=8080
+# 127.0.0.1 = only this computer can open the website (safest). Do not change unless you know why.
+# server.host=127.0.0.1
+# Folder with the website files, relative to the folder you start the program from.
+# frontend.dir=frontend
+# Only needed if the website is served from ANOTHER address (not the normal case):
+# cors.allowed.origin=http://localhost:5500

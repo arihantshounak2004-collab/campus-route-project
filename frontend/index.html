@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CampusRoute - Campus Navigation</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="layout">
+    <!-- ===== Sidebar ===== -->
+    <aside class="sidebar">
+      <div class="brand"><span class="logo">&#128205;</span><div><strong>CampusRoute</strong><small>Smart campus navigation</small></div></div>
+      <nav>
+        <button class="nav-btn active" data-view="dashboard">Dashboard</button>
+        <button class="nav-btn" data-view="planner">Map &amp; Route Planner</button>
+        <button class="nav-btn" disabled title="Added in Phase 10">Admin (coming soon)</button>
+      </nav>
+      <div class="server-status" id="serverStatus">Checking server...</div>
+    </aside>
+
+    <main class="content">
+      <div id="banner" class="banner hidden" role="alert"></div>
+
+      <!-- ===== Dashboard ===== -->
+      <section id="view-dashboard" class="view">
+        <h1>Campus overview</h1>
+        <div class="cards" id="statCards"></div>
+
+        <div class="grid-2">
+          <div class="panel">
+            <h2>Quick navigation</h2>
+            <label for="qSource">From</label><select id="qSource"></select>
+            <label for="qDest">To</label><select id="qDest"></select>
+            <button class="btn primary" id="qGo">Find route</button>
+          </div>
+          <div class="panel">
+            <h2>Current campus conditions</h2>
+            <div id="crowdBars"></div>
+            <h3>Pathways needing attention</h3>
+            <ul class="plain" id="attentionList"></ul>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h2>Facilities snapshot</h2>
+          <p class="muted">Facilities currently marked available, by type. Personalised, rule-based recommendations are added in Phase 9.</p>
+          <div id="facilitySnapshot" class="chips"></div>
+        </div>
+      </section>
+
+      <!-- ===== Map and planner ===== -->
+      <section id="view-planner" class="view hidden">
+        <h1>Map &amp; route planner</h1>
+        <div class="planner">
+          <div class="panel map-panel">
+            <div id="mapBox" class="map-box"></div>
+            <div class="legend" id="legend"></div>
+            <p class="muted small">Tip: click a place on the map to set the start, then click another to set the destination.</p>
+          </div>
+
+          <div class="panel form-panel">
+            <h2>Plan a route</h2>
+            <label for="source">Start</label><select id="source"></select>
+            <label for="dest">Destination</label><select id="dest"></select>
+            <label for="metric">Optimise for</label>
+            <select id="metric"><option value="DISTANCE">Shortest distance</option><option value="TIME">Shortest walking time</option></select>
+            <label class="check"><input type="checkbox" id="accessible"> Step-free routes only (accessibility)</label>
+            <label for="crowd">Avoid crowds: <output id="crowdOut">1</output> (0 = ignore, 10 = strongly avoid)</label>
+            <input type="range" id="crowd" min="0" max="10" step="1" value="1">
+            <button class="btn primary" id="goBtn">Calculate routes</button>
+            <button class="btn" id="swapBtn" type="button">Swap start / destination</button>
+          </div>
+        </div>
+
+        <div id="results" class="panel">
+          <div class="empty">Choose a start and a destination, then press <strong>Calculate routes</strong>.</div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="js/api.js"></script>
+  <script src="js/map.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
